@@ -1,0 +1,46 @@
+.aside
+	@extend .flex_column
+	@extend .flex_center
+	@include default_padding()
+	width: 50%
+	height: 100%
+	justify-content: flex-start
+
+	section
+		@extend .aside
+		width: 100%
+		height: 100%
+
+
+.created_flashcards
+	@include default_padding(2)
+	display: grid
+	width: 100%
+	height: 100%
+	grid-template-columns: 1fr 1fr
+	grid-gap: .5rem
+	overflow: auto
+
+	div
+		@extend .flex_column
+		@extend .flex_center
+		height: 6rem
+		background-color: grey
+		border-radius: 1rem
+
+		cursor: pointer
+		transition: filter 0.3s ease
+
+		&:nth-child(3)
+			background-color: pink
+		&:nth-child(4)
+			background-color: brown
+		&:nth-child(5)
+			background-color: blue
+		&:nth-child(6)
+			background-color: purple
+		&:nth-child(7)
+			background-color: red
+
+		&:hover
+			filter: brightness(70%)

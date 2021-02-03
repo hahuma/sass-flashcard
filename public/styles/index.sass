@@ -1,0 +1,16 @@
+@import './vars'
+@import './globals'
+@import './reset' 
+@import './mixins'
+
+@import './header'
+@import './main'
+@import './aside'
+
+.primary_container
+	@extend .flex_row
+
+	@include default_padding()
+	color: $text_white
+	width: 100%
+	height: 80%

@@ -1,0 +1,62 @@
+.main
+	@extend .flex_column
+	@extend .flex_center
+	justify-content: flex-start
+	width: 60%
+	height: 100%
+	border-right: 1px solid white
+
+	fieldset 
+		@extend .flex_column
+		margin-top: 1.5rem
+		width: 20rem
+		height: 20rem
+
+		legend
+			text-align: center
+			margin-bottom: .2rem
+
+
+
+
+.flashcard_container 
+	@extend .flex_column
+	max-height: 100%
+
+	input, textarea
+		@include default_padding()
+
+	label
+		margin-top: .5rem
+
+	label#color_label
+		margin-top: 1rem
+		font-size: 1.2rem
+		text-align: center
+		cursor: pointer
+		transition: filter .3s ease
+		
+		&:hover
+			filter: brightness(70%)
+
+		input
+			display: none
+
+
+	button.save_flashcard
+		width: 100%
+		height: 2.5rem
+		margin-top: 2rem
+		background: transparent
+		cursor: pointer
+		border-radius: 2rem
+
+		font-size: 1.4rem
+		color: $text_white
+		border: 1px solid white
+		transition: background .2s ease-in-out
+
+		&:hover
+			background: $white_background
+			color: $text_black
+
