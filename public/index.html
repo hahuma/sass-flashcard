@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Flashcards</title>
-	<link rel="stylesheet" href="./public/styles/index.css">
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
 	<header class="header-container">
@@ -15,17 +15,17 @@
 			<fieldset>
 				<legend>Create a new Flashcard</legend>
 				<div class="flashcard_container">
-					<label for="flashcard_name">Question:</label>
-					<input type="text" name="flashcard_name" id="flashcard_name">
+					<label for="flashcard_question">Question:</label>
+					<input type="text" name="flashcard_question" id="flashcard_question">
 
-					<label for="flashcard_content">Answer:</label>
-					<textarea name="flashcard_content" id="flashcard_content" cols="30" rows="10"></textarea>
+					<label for="flashcard_answer">Answer:</label>
+					<textarea name="flashcard_answer" id="flashcard_answer" cols="30" rows="10"></textarea>
 
 					<label id="color_label" for="flashcard_color">Choose a Flashcard color  
 					<input type="color" id="flashcard_color" name="flashcard_color">
 					</label>
 
-					<button class="save_flashcard">
+					<button class="save_flashcard" id='save_flashcard'>
 						Save Flashcard
 					</button>
 				</div>
@@ -40,5 +40,7 @@
 			</section>
 		</aside>
 	</div>
+
+	<script type="module" src="scripts/index.js"></script>
 </body>
 </html>
