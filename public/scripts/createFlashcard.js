@@ -1,5 +1,6 @@
 import Flashcard from './Flashcard.js'
 import View from './View.js'
+import useLocalStorage from './useLocalStorage.js'	
 
 
 const createFlashcardButton = document.getElementById('save_flashcard')
@@ -13,7 +14,7 @@ const handleSubmitEvent = () => {
 	const flashcard = new Flashcard(question, answer, color)
 	const view = new View()
 	view.createFlashcard(flashcard)
-	console.log(flashcard)
+	useLocalStorage(flashcard)
 }
 
 Flashcard.submitFlashcardEvent(createFlashcardButton, handleSubmitEvent)
