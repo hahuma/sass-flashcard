@@ -17,7 +17,7 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 0;
+  outline: none;
   border: none;
   font-family: "Secular One", sans-serif;
   box-sizing: border-box;
@@ -93,6 +93,7 @@ input, textarea {
   text-align: center;
   cursor: pointer;
   transition: filter 0.3s ease;
+  border-radius: 2rem;
 }
 .flashcard_container label#color_label:hover {
   filter: brightness(70%);
@@ -109,7 +110,7 @@ input, textarea {
   border-radius: 2rem;
   font-size: 1.4rem;
   color: #FFFFFF;
-  border: 1px solid white;
+  border: 1px solid #FFFFFF;
   transition: background 0.2s ease-in-out;
 }
 .flashcard_container button.save_flashcard:hover {
@@ -131,8 +132,9 @@ input, textarea {
 .created_flashcards {
   padding: 1rem;
   display: grid;
-  height: 100%;
+  height: 40rem;
   max-width: 40rem;
+  max-height: 60rem;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5rem;
   overflow: auto;
@@ -153,6 +155,43 @@ input, textarea {
 }
 .created_flashcards div .answer {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .created_flashcards {
+    max-width: 60rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 580px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .primary_container {
+    flex-direction: column;
+  }
+  .primary_container .main {
+    padding: 1rem;
+    width: 100%;
+    border-left: none;
+    border-bottom: 0.1rem solid #FFFFFF;
+  }
+  .primary_container .aside, .primary_container .aside section, .aside .primary_container section {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .primary_container .aside .created_flashcards, .aside .primary_container section .created_flashcards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .primary_container .aside #section_title, .aside .primary_container section #section_title {
+    border-bottom: 1px solid #FFFFFF;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

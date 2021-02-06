@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) 
+	:root
+		font-size: 14px
+
+	//aside area
+	.created_flashcards
+		max-width: 60rem
+		grid-template-columns: 1fr	
+
+
+
+
+@media screen and (max-width: 580px)
+	:root
+		font-size: 10px
+
+
+@media screen and (max-width: 520px)
+
+	.primary_container
+		flex-direction: column
+
+		.main
+			padding: 1rem
+			width: 100%
+			border-left: none
+			border-bottom: .1rem solid $secondary_color
+
+		.aside
+			margin-top: .5rem
+			width: 100%
+
+			.created_flashcards
+				grid-template-columns: 1fr 1fr
+
+			#section_title
+				border-bottom: 1px solid $secondary_color

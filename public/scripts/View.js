@@ -30,11 +30,9 @@ class View {
 	}
 
 	_flipFlashcardCallback = (id) => () => {
-		console.log(id)
 		const questionH3 = document.querySelector(`#${id}question`)
 		const answerH3 = document.querySelector(`#${id}answer`)
 
-		console.log(questionH3.style.display)
 		if(questionH3.style.display === 'block' || questionH3.style.display === '') {
 			questionH3.style.display = 'none'
 			answerH3.style.display = 'block'
