@@ -29,6 +29,7 @@
 		@extend .flex_center
 		@include default_padding()
 
+		position: relative
 
 		border-radius: 1rem
 
@@ -49,4 +50,12 @@
 		.answer
 			@extend .question
 			display: none
+
+		.delete_flashcard
+			position: absolute
+			top: 0
+			right: .2rem
+
+			background-color: transparent
+			z-index: 20
 

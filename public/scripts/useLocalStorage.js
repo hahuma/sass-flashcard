@@ -1,15 +1,18 @@
-function useLocalStorage(newFlashcard = undefined) {
+function useLocalStorage(flashcard = null, clearDataBeforeUpdate = false) {
 	let flashcards = new Array()
 	const databaseKey = 'flashcards'
 
-	if(newFlashcard) {
-		if(localStorage.hasOwnProperty(databaseKey)) {
-			flashcards = JSON.parse(localStorage.getItem(databaseKey))
-		}
+	if(clearDataBeforeUpdate) localStorage.removeItem(databaseKey)
 
-		flashcards.push(newFlashcard)
+	if(flashcard) {
+		const foundFlashcards = JSON.parse(localStorage.getItem(databaseKey))
+
+		if(foundFlashcards) flashcards = foundFlashcards
+
+		flashcards.push(flashcard)
 
 		localStorage.setItem(databaseKey, JSON.stringify(flashcards))
+
 	}
 
 	flashcards = JSON.parse(localStorage.getItem(databaseKey))
@@ -17,4 +20,9 @@ function useLocalStorage(newFlashcard = undefined) {
 	return flashcards
 }
 
+function clear() {
+	localStorage.clear()
+}
+
 export default useLocalStorage
+export { clear }

@@ -1,3 +1,5 @@
+import deleteFlashcard from './deleteFlashcard.js'
+
 class View {
 
 	createFlashcard({ question, color, answer, id }) {
@@ -5,21 +7,29 @@ class View {
 		const flashcardDiv = document.createElement('div')
 		const flashcardQuestionH3 = document.createElement('h3')
 		const flashcardAnswerH3 = document.createElement('h3')
+		const trashBinButton = document.createElement('button')
 
 		flashcardQuestionH3.innerText = question
 		flashcardAnswerH3.innerText = answer
+		trashBinButton.innerText = 'delete'
 
 		flashcardQuestionH3.classList.add('question')
 		flashcardAnswerH3.classList.add('answer')
+		trashBinButton.classList.add('delete_flashcard')
 
 		flashcardQuestionH3.id = `${id}question`
 		flashcardAnswerH3.id = `${id}answer`
+		flashcardDiv.id = `${id}container`
+
+		trashBinButton.onclick = () => deleteFlashcard(id)
 
 		flashcardDiv.append(flashcardQuestionH3)
 		flashcardDiv.append(flashcardAnswerH3)
+		flashcardDiv.append(trashBinButton)
 
 		this._addFlashcardColor(flashcardDiv, color)
-		this._addFlipFlashcardEvent(flashcardDiv, id)
+		this._addFlipFlashcardEvent(flashcardQuestionH3, id)
+		this._addFlipFlashcardEvent(flashcardAnswerH3, id)
 
 
 		createdFlashcardsContainer.append(flashcardDiv)
@@ -51,8 +61,13 @@ class View {
 
 	}
 
-	_addFlipFlashcardEvent(flashcardDiv, id) {
-		flashcardDiv.addEventListener('click', this._flipFlashcardCallback(id))
+	static removeFlashcard(id) {
+		const choosenFlashcard = document.getElementById(`${id}container`)
+		choosenFlashcard.remove()
+	}
+
+	_addFlipFlashcardEvent(flashcardH3, id) {
+		flashcardH3.addEventListener('click', this._flipFlashcardCallback(id))
 	}
 
 }

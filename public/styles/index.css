@@ -141,6 +141,7 @@ input, textarea {
 }
 .created_flashcards div {
   padding: 0.5rem;
+  position: relative;
   border-radius: 1rem;
   text-align: center;
   transition: filter 0.3s ease;
@@ -156,6 +157,13 @@ input, textarea {
 .created_flashcards div .answer {
   display: none;
 }
+.created_flashcards div .delete_flashcard {
+  position: absolute;
+  top: 0;
+  right: 0.2rem;
+  background-color: transparent;
+  z-index: 20;
+}
 
 @media screen and (max-width: 768px) {
   :root {
@@ -164,7 +172,6 @@ input, textarea {
 
   .created_flashcards {
     max-width: 60rem;
-    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 580px) {
@@ -179,7 +186,7 @@ input, textarea {
   .primary_container .main {
     padding: 1rem;
     width: 100%;
-    border-left: none;
+    border-right: 0;
     border-bottom: 0.1rem solid #FFFFFF;
   }
   .primary_container .aside, .primary_container .aside section, .aside .primary_container section {
@@ -187,7 +194,7 @@ input, textarea {
     width: 100%;
   }
   .primary_container .aside .created_flashcards, .aside .primary_container section .created_flashcards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 10rem);
   }
   .primary_container .aside #section_title, .aside .primary_container section #section_title {
     border-bottom: 1px solid #FFFFFF;

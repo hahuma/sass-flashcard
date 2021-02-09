@@ -1,5 +1,8 @@
 class Flashcard {
 	constructor(question, answer, color) {
+		if(!question || !answer || !color){
+			throw new Error('Please fill up the inputs')
+		}
 		this.question = question
 		this.answer = answer
 		this.color = color

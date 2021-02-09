@@ -11,10 +11,16 @@ const handleSubmitEvent = () => {
 	const question = document.getElementById('flashcard_question').value
 	const answer = document.getElementById('flashcard_answer').value
 	const color = document.getElementById('flashcard_color').value
-	const flashcard = new Flashcard(question, answer, color)
-	const view = new View()
-	view.createFlashcard(flashcard)
-	useLocalStorage(flashcard)
+
+	try {
+		const flashcard = new Flashcard(question, answer, color)
+		const view = new View()
+		view.createFlashcard(flashcard)
+		useLocalStorage(flashcard)
+	} catch(e) {
+		alert(e.message)
+	}
+	
 }
 
 Flashcard.submitFlashcardEvent(createFlashcardButton, handleSubmitEvent)

@@ -5,7 +5,6 @@
 	//aside area
 	.created_flashcards
 		max-width: 60rem
-		grid-template-columns: 1fr	
 
 
 
@@ -23,7 +22,7 @@
 		.main
 			padding: 1rem
 			width: 100%
-			border-left: none
+			border-right: 0
 			border-bottom: .1rem solid $secondary_color
 
 		.aside
@@ -31,7 +30,7 @@
 			width: 100%
 
 			.created_flashcards
-				grid-template-columns: 1fr 1fr
+				grid-template-columns: repeat(3, 10rem)
 
 			#section_title
 				border-bottom: 1px solid $secondary_color
